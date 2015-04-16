@@ -2,7 +2,9 @@
   "name": "KodingSleepMode",
   "title": "kdsleepmode",
   "description": "This is what's shown when a VM is unavailable.",
+  "version": "0.9.5",
   "author": "\"stefanbc\" Stefan Cosma",
+  "repository": "koding/kdsleepmode",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-htmlmin": "^0.4.0",
