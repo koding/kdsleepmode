@@ -64,7 +64,7 @@ while n <= starsCount
 # Animate the stars
 i = 0
 while i < starsCount
-  size = randomIntBetween(5, 10)
+  size = randomIntBetween(5, 12)
   x = Math.min(randomIntBetween(1, w), w - size - 5)
   y = Math.min(randomIntBetween(1, h), h - size - 5)
   elem = $('<div class=\'star\'></div>')
