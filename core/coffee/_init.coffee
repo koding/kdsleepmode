@@ -30,7 +30,7 @@ generateRandomSparklingFrames = (steps, minOpacity, maxOpacity) ->
   rule += '100% { opacity: ' + opacity[0] + '} '
   rule
 
-# Dynamically inster keyframes into the CSS
+# Dynamically insert keyframes into CSS
 insertStarRule = (name, numSteps, minOpacity, maxOpacity, animationTimeMin, animationTimeMax) ->
   # We need to take the default style sheet
   CSS = document.styleSheets[0]
@@ -64,7 +64,7 @@ while n <= starsCount
 # Animate the stars
 i = 0
 while i < starsCount
-  size = randomIntBetween(1, 6)
+  size = randomIntBetween(5, 9)
   x = Math.min(randomIntBetween(1, w), w - size - 5)
   y = Math.min(randomIntBetween(1, h), h - size - 5)
   elem = $('<div class=\'star\'></div>')

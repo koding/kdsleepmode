@@ -67,7 +67,7 @@ header {
 		}
 		li {
 			display: inline-block;
-			margin-left: 14px;
+			margin-left: 19px;
 			cursor: pointer;
 			a {
 				text-decoration: none;
@@ -112,8 +112,9 @@ header {
             display: inline-block;
             background-image: url('../../assets/img/icon.moon.svg');
             background-repeat: no-repeat;
-            width: 70px;
-            height: 65px;
+            background-size: cover;
+            width: 90px;
+            height: 82px;
             vertical-align: middle;
         }
     }
