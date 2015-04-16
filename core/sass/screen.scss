@@ -67,7 +67,7 @@ header {
 		}
 		li {
 			display: inline-block;
-			margin-right: 8px;
+			margin-left: 14px;
 			cursor: pointer;
 			a {
 				text-decoration: none;
@@ -83,7 +83,7 @@ header {
 				padding: 5px 15px;
 				text-transform: uppercase;
 				font-size: 14px;
-				margin-left: 15px;
+				margin-left: 21px;
 				margin-right: 0;
 			}
 			&:last-child {
@@ -96,7 +96,7 @@ header {
 				padding: 5px 15px;
 				text-transform: uppercase;
 				font-size: 14px;
-				margin-left: 15px;
+				margin-left: 21px;
 				margin-right: 0;
 				a {
 				    color: $white;
