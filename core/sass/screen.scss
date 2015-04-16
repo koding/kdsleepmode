@@ -22,14 +22,13 @@ body {
 	background-color: $mine_shaft;
 	text-align: center;
 	font-family: $font_0;
+	font-size: 16px;
 	color: $color_delta;
 }
 a {
 	color: $color_green_haze;
 }
-p {
-	margin: 0;
-}
+ol,
 ul {
 	margin: 0;
 	padding: 0;
@@ -121,7 +120,17 @@ header {
             vertical-align: middle;
         }
     }
-    #text-wrapper .row:last-child {
-	    margin-top: 60px;
+    #text-wrapper {
+        .row {
+            &:first-child {
+                font-size: 20px;
+            }
+            &:last-child {
+                margin-top: 60px;
+            }
+            #location {
+                font-weight: 700;
+            }
+        }
     }
 }

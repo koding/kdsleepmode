@@ -46,7 +46,7 @@
         <link rel="fluid-icon" href="core/assets/img/fluid512.png" title="Koding" />
         <link href='https://chrome.google.com/webstore/detail/koding/fgbjpbdfegnodokpoejnbhnblcojccal' rel='chrome-webstore-item'>
         
-        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
         <link href="core/dest/css/_normalize.min.css" rel="stylesheet" type="text/css">
         <link href="core/dest/css/screen.min.css" rel="stylesheet" type="text/css">
     </head>
@@ -72,14 +72,14 @@
                 </div>
                 <div id="text-wrapper">
                     <div class="row">
-                        <b>
-                            <a id="location"></a> is sleeping, so check back later maybe?
-                        </b>
+                        Oh no... <span id="location"></span> is sleeping right now. Check again a little later?
                     </div>
                     <div class="row">
-                        <h4>Why is this VM sleeping?</h4>
-                        <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis.</p>
-                        <p><a href="https://koding.com/Pricing" title="Go premium">Go premium</a> and your VM stays up all day and night.</p>
+                        <p>Additional info:</p>
+                        <ul>
+                            <li><a href="http://learn.koding.com/faq/what-is-koding/" title="What is Koding?">What is Koding?</a></li>
+                            <li><a href="http://learn.koding.com/guides/vm-asleep/" title="Why do VMs appear as asleep?">Why do VMs appear as asleep?</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -90,6 +90,15 @@
             require(['core/js/require.config'], function() {
                 require(['zepto', 'app']);
             });
+        </script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            
+            ga('create', 'UA-59844331-1', 'auto');
+            ga('send', 'pageview');
         </script>
     </body>
 </html>
