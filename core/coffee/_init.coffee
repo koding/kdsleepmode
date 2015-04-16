@@ -80,6 +80,4 @@ while i < starsCount
 # Get and set the current URL location
 location = document.getElementById('location')
 hostname = window.location.hostname
-location.href = 'http://' + hostname
-location.title = hostname
 location.innerHTML = hostname
