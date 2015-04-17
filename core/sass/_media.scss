@@ -1,0 +1,84 @@
+// Set the global dimensions
+$phone-width : 480px;
+$tablet-width : 768px;
+
+// Mixin for phone view
+@mixin phone {
+  @media only screen and (max-width: #{$phone-width}) {
+    @content;
+  }
+}
+// Mixin for tablet view
+@mixin tablet {
+  @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+header {
+    @include phone {
+        width: 370px;
+        margin: 0 auto 60px auto;
+    }
+    
+    @include tablet {
+        width: 600px;
+        margin: 0 auto 20px auto;
+        padding-top: 0;
+    }
+    
+    #menu-wrapper {
+        @include phone {
+            display: block;
+            width: auto;
+            text-align: center;
+        }
+        @include tablet {
+            width: 55%;
+        }
+        li {
+            @include phone {
+                margin-left: 15px;
+            }
+            @include tablet {
+                margin-left: 10px;
+            }
+        }
+        li:nth-child(3),
+        li:last-child {
+            @include phone {
+                margin-left: 10px;
+            }
+            @include tablet {
+                margin-left: 10px;
+            }
+        }
+    }
+    
+    #logo-wrapper {
+        @include phone {
+            display: block;
+            width: auto;
+            text-align: center;
+        }
+        @include tablet {
+            width: 45%;
+        }
+    }
+}
+#content-wrapper #text-wrapper .row:first-child {
+    @include phone {
+        width: 290px;
+        margin: 0 auto;
+        word-break: break-all;
+    }
+    @include tablet {
+        width: 600px;
+        margin: 0 auto;
+    }
+}
+#content-wrapper #text-wrapper .row:last-child {
+    @include tablet {
+        margin-top: 0;
+    }
+}
