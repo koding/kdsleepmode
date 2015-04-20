@@ -5,7 +5,7 @@ h = document.documentElement.clientHeight
 # Set the number of stars that appear on the screen
 starsCount = 100
 
-
+# Generate some random numbers
 randomIntBetween = (a, b) ->
   Math.floor Math.random() * (b - a + 1) + a
 
@@ -41,13 +41,21 @@ insertStarRule = (name, numSteps, minOpacity, maxOpacity, animationTimeMin, anim
       CSS.insertRule '.' + name + ' { -webkit-animation: ' + name + ' ' + randomIntBetween(animationTimeMin, animationTimeMax) + 's infinite }', CSS.cssRules.length
     catch e
     try
+      CSS.insertRule '@-moz-keyframes ' + name + '{ ' + generateRandomSparklingFrames(numSteps, minOpacity, maxOpacity) + '}', CSS.cssRules.length
+      CSS.insertRule '.' + name + ' { -moz-animation: ' + name + ' ' + randomIntBetween(animationTimeMin, animationTimeMax) + 's infinite }', CSS.cssRules.length
+    catch e
+    try
       CSS.insertRule '@keyframes ' + name + '{ ' + generateRandomSparklingFrames(numSteps, minOpacity, maxOpacity) + '}', CSS.cssRules.length
-      CSS.insertRule '.' + name + ' {animation: ' + name + ' ' + randomIntBetween(animationTimeMin, animationTimeMax) + 's infinite }', CSS.cssRules.length
+      CSS.insertRule '.' + name + ' { animation: ' + name + ' ' + randomIntBetween(animationTimeMin, animationTimeMax) + 's infinite }', CSS.cssRules.length
     catch e
   if CSS.addRule
     try
       CSS.addRule '@-webkit-keyframes ' + name, generateRandomSparklingFrames(numSteps, minOpacity, maxOpacity)
       CSS.addRule '.' + name, '-webkit-animation: ' + name + ' ' + randomIntBetween(animationTimeMin, animationTimeMax) + 's infinite'
+    catch e
+    try
+      CSS.addRule '@-moz-keyframes ' + name, generateRandomSparklingFrames(numSteps, minOpacity, maxOpacity)
+      CSS.addRule '.' + name, '-moz-animation: ' + name + ' ' + randomIntBetween(animationTimeMin, animationTimeMax) + 's infinite'
     catch e
     try
       CSS.addRule '@keyframes ' + name, generateRandomSparklingFrames(numSteps, minOpacity, maxOpacity)
@@ -58,7 +66,7 @@ insertStarRule = (name, numSteps, minOpacity, maxOpacity, animationTimeMin, anim
 # Add the stars to the view
 n = 1
 while n <= starsCount
-  insertStarRule 's' + n, 5, .1, 1, 3, 6
+  insertStarRule 's' + n, 5, 0.1, 1, 3, 6
   n++
 
 # Animate the stars
