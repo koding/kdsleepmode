@@ -6,11 +6,11 @@ This is what's shown when a Koding VM is unavailable.
 
 The `index.html` file is the main file and the result of the build.
 The `core` folder holds all the sources and assets of the project.
-    * `assets` - has an `img` folder with all the image assets and a `js` folder that contains all the JavaScript assets.
-    * `coffee` - contains the main JavaScript source code written in CoffeScript.
-    * `dest` - contains all the JavaScript and CSS files that result after a successful build. These files are used by the `index.html` file.
-    * `sass` - contains the main CSS source code written in Sass. This also includes the code for RWD.
-    * `template` - contains the main HTML source code. The files here **should* be modified **NOT** the index.html file.
+* `assets` - has an `img` folder with all the image assets and a `js` folder that contains all the JavaScript assets.
+* `coffee` - contains the main JavaScript source code written in CoffeScript.
+* `dest` - contains all the JavaScript and CSS files that result after a successful build. These files are used by the `index.html` file.
+* `sass` - contains the main CSS source code written in Sass. This also includes the code for RWD.
+* `template` - contains the main HTML source code. The files here **should* be modified **NOT** the index.html file.
 
 ## Build process
 
