@@ -10,7 +10,7 @@ The `core` folder holds all the sources and assets of the project.
 * `coffee` - contains the main JavaScript source code written in CoffeScript.
 * `dest` - contains all the JavaScript and CSS files that result after a successful build. These files are used by the `index.html` file.
 * `sass` - contains the main CSS source code written in Sass. This also includes the code for RWD.
-* `template` - contains the main HTML source code. The files here **should* be modified **NOT** the index.html file.
+* `template` - contains the main HTML source code. The files in this folder are the ones that **should** be modified **NOT** the index.html file.
 
 ## Build process
 
