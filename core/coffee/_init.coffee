@@ -31,19 +31,19 @@ generateRandomSparklingFrames = (steps, minOpacity, maxOpacity) ->
   rule
 
 # Dynamically insert keyframes into CSS
-insertStarRule = (stylesheet, index, name, numSteps, minOpacity, maxOpacity, animationTimeMin, animationTimeMax) ->
+insertStarRule = (stylesheet, name, numSteps, minOpacity, maxOpacity, animationTimeMin, animationTimeMax) ->
   if stylesheet.insertRule
     try
-      stylesheet.insertRule '@-webkit-keyframes ' + name + '{ ' + generateRandomSparklingFrames(numSteps, minOpacity, maxOpacity) + '}', index
-      stylesheet.insertRule '.' + name + ' { -webkit-animation: ' + name + ' ' + randomIntBetween(animationTimeMin, animationTimeMax) + 's infinite }', index
+      stylesheet.insertRule '@-webkit-keyframes ' + name + '{ ' + generateRandomSparklingFrames(numSteps, minOpacity, maxOpacity) + '}', stylesheet.cssRules.length
+      stylesheet.insertRule '.' + name + ' { -webkit-animation: ' + name + ' ' + randomIntBetween(animationTimeMin, animationTimeMax) + 's infinite }', stylesheet.cssRules.length
     catch e
     try
-      stylesheet.insertRule '@-moz-keyframes ' + name + '{ ' + generateRandomSparklingFrames(numSteps, minOpacity, maxOpacity) + '}', index
-      stylesheet.insertRule '.' + name + ' { -moz-animation: ' + name + ' ' + randomIntBetween(animationTimeMin, animationTimeMax) + 's infinite }', index
+      stylesheet.insertRule '@-moz-keyframes ' + name + '{ ' + generateRandomSparklingFrames(numSteps, minOpacity, maxOpacity) + '}', stylesheet.cssRules.length
+      stylesheet.insertRule '.' + name + ' { -moz-animation: ' + name + ' ' + randomIntBetween(animationTimeMin, animationTimeMax) + 's infinite }', stylesheet.cssRules.length
     catch e
     try
-      stylesheet.insertRule '@keyframes ' + name + '{ ' + generateRandomSparklingFrames(numSteps, minOpacity, maxOpacity) + '}', index
-      stylesheet.insertRule '.' + name + ' { animation: ' + name + ' ' + randomIntBetween(animationTimeMin, animationTimeMax) + 's infinite }', index
+      stylesheet.insertRule '@keyframes ' + name + '{ ' + generateRandomSparklingFrames(numSteps, minOpacity, maxOpacity) + '}', stylesheet.cssRules.length
+      stylesheet.insertRule '.' + name + ' { animation: ' + name + ' ' + randomIntBetween(animationTimeMin, animationTimeMax) + 's infinite }', stylesheet.cssRules.length
     catch e
   if stylesheet.addRule
     try
@@ -67,15 +67,18 @@ n = 1
 CSS = do ->
   # Create the <style> tag
   CSSstyle = document.createElement('style')
+  CSSstyle.type = 'text/css';
+  
   # WebKit hack :(
   CSSstyle.appendChild document.createTextNode('')
+  
   # Add the <style> element to the page
   document.head.appendChild CSSstyle
   CSSstyle.sheet
 
 # Insert the animations
 while n <= starsCount
-  insertStarRule CSS, 1, 's' + n, 5, 0.1, 1, 3, 6
+  insertStarRule CSS, 's' + n, 5, 0.1, 1, 3, 6
   n++
 
 # Animate the stars
