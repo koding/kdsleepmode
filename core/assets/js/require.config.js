@@ -1,5 +1,5 @@
 requirejs.config({
-    baseUrl: 'assets/',
+    baseUrl: './assets/',
     paths: {
         zepto   : 'js/zepto.min',
         app     : 'js/app.min'
