@@ -60,21 +60,11 @@ insertStarRule = (stylesheet, name, numSteps, minOpacity, maxOpacity, animationT
     catch e
   return
 
+# We need to create a style tag to hold the animation
+CSS = document.styleSheets[2]
+
 # Add the stars to the view
 n = 1
-
-# We need to create a style tag to hold the animation
-CSS = do ->
-  # Create the <style> tag
-  CSSstyle = document.createElement('style')
-  CSSstyle.type = 'text/css';
-  
-  # WebKit hack :(
-  CSSstyle.appendChild document.createTextNode('')
-  
-  # Add the <style> element to the page
-  document.head.appendChild CSSstyle
-  CSSstyle.sheet
 
 # Insert the animations
 while n <= starsCount
